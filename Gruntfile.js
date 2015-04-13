@@ -17,7 +17,7 @@ module.exports = function (grunt) {
         ' * <%= pkg.homepage %>\n' +
         ' *\n' +
         ' * Copyright <%= grunt.template.today("yyyy") %>, <%= pkg.author %>\n' +
-        ' * The TAGWeb.com.br\n' +
+        ' * The TOBE.com.br\n' +
         ' * http://www.tagweb.com.br/\n' +
         ' *\n' +
         ' * Licensed under <%= pkg.license.join(" & ") %>\n' +
@@ -49,8 +49,8 @@ module.exports = function (grunt) {
             dist: {
                 src: 'dist/'
             },
-            xdk: {
-                src: '<%= pkg.name %>/www/'
+            apps: {
+                src: ['phonegap/<%= pkg.name %>/www/','xdk/<%= pkg.name %>/www/']
             }
         },
         less: {
@@ -242,7 +242,7 @@ module.exports = function (grunt) {
         'less:build',
         'jade:build',
         'imageEmbed:build',
-        'clean:xdk',
+        'clean:apps',
         'copy:apps',
         'server'
     ]);
@@ -255,6 +255,7 @@ module.exports = function (grunt) {
         'copy:dist',
         'uglify:dist',
         'imageEmbed:dist',
+        'clean:apps',
         'copy:apps',
     ]);
 
