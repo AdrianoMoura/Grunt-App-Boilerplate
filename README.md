@@ -10,23 +10,23 @@ First things first, edit package.json with your project info, most important is 
 
 If you haven't cordova/phonegap and grunt-cli in your computer, you must run:
 
-´´´
-npm install -g grunt-cli
-npm install -g cordova
-´´
+```
+sudo npm install -g grunt-cli
+sudo npm install -g cordova
+```
 
 
 Now create a cordova/phonegap project in phonegap folder, the app_name must be the name in package.json
 
-´´´
+```
 cordova create app_name [com.author.appname]
-´´´
+```
 
 If you will use Intel XDK Create a Intel XDK project inside xdk folder, the App Name must be the same in package.json
 
 
 After all of this, run the follow command
 
-´´´
+```
 npm install
-´´´
+```
