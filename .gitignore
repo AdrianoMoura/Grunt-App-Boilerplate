@@ -2,6 +2,6 @@
 /.idea
 /build
 /dist
-.DS_store
+/.DS_store
 /phonegap/Grunt_App_Boilerplate
 /xdk/Grunt_App_Boilerplate
