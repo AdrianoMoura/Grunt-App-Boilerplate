@@ -3,4 +3,5 @@
 /build
 /dist
 .DS_store
-Grunt_App_Boilerplate
+/phonegap/Grunt_App_Boilerplate
+/xdk/Grunt_App_Boilerplate
