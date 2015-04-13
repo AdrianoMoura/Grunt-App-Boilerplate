@@ -25,7 +25,7 @@ cordova create app_name [com.author.appname]
 If you will use Intel XDK Create a Intel XDK project inside xdk folder, the App Name must be the same in package.json
 
 
-After all of this, run the follow command
+After all of this, run the following command
 
 ```
 npm install
