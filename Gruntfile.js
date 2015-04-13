@@ -212,13 +212,19 @@ module.exports = function (grunt) {
                     }
                 ]
             },
-            xdk: {
+            apps: {
                 files: [
                     {
                         expand: true,
                         cwd: 'build/',
                         src: ['**'],
-                        dest: '<%= pkg.name %>/www/'
+                        dest: 'xdk/<%= pkg.name %>/www/'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'build/',
+                        src: ['**'],
+                        dest: 'phonegap/<%= pkg.name %>/www/'
                     }
                 ]
             }
@@ -237,7 +243,7 @@ module.exports = function (grunt) {
         'jade:build',
         'imageEmbed:build',
         'clean:xdk',
-        'copy:xdk',
+        'copy:apps',
         'server'
     ]);
 
@@ -248,7 +254,8 @@ module.exports = function (grunt) {
         'jade:dist',
         'copy:dist',
         'uglify:dist',
-        'imageEmbed:dist'
+        'imageEmbed:dist',
+        'copy:apps',
     ]);
 
     grunt.registerTask('server', [
