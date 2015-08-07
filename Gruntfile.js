@@ -29,17 +29,16 @@ module.exports = function (grunt) {
         connect: {
             server: {
                 options: {
-                    port: 6000,
-                    base: ''
+                    hostname: '*'
                 }
             }
         },
         open: {
             build: {
-                path: 'http://localhost:6000/build'
+                path: 'http://localhost:8000/build'
             },
             dist: {
-                path: 'http://localhost:6000/dist'
+                path: 'http://localhost:8000/dist'
             }
         },
         clean: {
@@ -261,6 +260,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('server', [
         'connect',
+        'open:build',
         'watch:build'
     ]);
 

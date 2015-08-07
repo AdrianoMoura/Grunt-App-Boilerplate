@@ -1,5 +1,0 @@
-/*
-
-My App Script
-
- */
