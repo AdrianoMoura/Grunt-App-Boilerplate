@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>My App</title>
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/Mobile_App_Creator.css">
+  </head>
+  <body>
+    <div class="statusbar-overlay"></div>
+    <div class="views">
+      <div class="view view-main">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left"></div>
+            <div class="center sliding">Mobile App Creator
+            </div>
+            <div class="right"></div>
+          </div>
+        </div>
+        <div class="pages navbar-through">
+          <div data-page="index" class="page">
+            <div class="page-content">
+              <div class="content-block">
+                <p>Content</p><a href="about.html">About app</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Path to Framework7 Library JS-->
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/Mobile_App_Creator.js"></script>
+    <script>
+         // Determine theme depending on device
+         var isIos = Framework7.prototype.device.ios;
+         var isAndroid = !isIos;
+             // Set Template7 global devices flags
+         Template7.global = {
+             android: isAndroid,
+             ios: isIos
+         };
+         // Define Dom7
+         var $$ = Dom7;
+             // Add CSS Styles
+         if (isAndroid) {
+             $$('head').prepend(
+                 '<link rel="stylesheet" href="css/framework7.material.css">' +
+                 '<link rel="stylesheet" href="css/framework7.material.colors.css">'
+             );
+         }
+         else
+         {
+             $$('head').prepend(
+                 '<link rel="stylesheet" href="css/framework7.ios.css">' +
+                 '<link rel="stylesheet" href="css/framework7.ios.colors.css">'
+             );
+         }
+         // Change Through navbar layout to Fixed
+         if(isAndroid)
+         {
+             $$('.view .navbar-through').removeClass('navbar-through').addClass('navbar-fixed');
+             // And move Navbar into Page
+             $$('.view .page').each(function()
+             {
+                 $$(this).prepend($$(this).parent().parent().find('.navbar'));
+             })
+         }
+         // Init App
+         var myApp = new Framework7({
+             // Enable Material theme for Android device only
+             material: isAndroid,
+             // Enable Template7 pages
+             template7Pages: true,
+             animateNavBackIcon: true
+         });
+         // Init View
+         var mainView = myApp.addView('.view-main', {
+             dynamicNavbar: !isAndroid
+         });
+    </script>
+  </body>
+</html>

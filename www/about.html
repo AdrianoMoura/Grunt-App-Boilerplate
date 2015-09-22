@@ -1,0 +1,23 @@
+
+<!-- Dynamic navbar for iOS theme-->{{#if @global.ios}}
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left sliding"><a href="#" class="back link"><i class="icon icon-back"></i><span>Back</span></a></div>
+    <div class="center sliding">About</div>
+  </div>
+</div>{{/if}}
+<div data-page="about" class="page">
+  <!-- Fixed navbar for Material theme-->{{#if @global.android}}
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="left"><a href="#" class="back icon-only"><i class="icon icon-back"></i></a></div>
+      <div class="center">About</div>
+    </div>
+  </div>{{/if}}
+  <div class="page-content">
+    <!-- Page content goes here-->
+    <div class="content-block">
+      <p>Page Content</p>
+    </div>
+  </div>
+</div>

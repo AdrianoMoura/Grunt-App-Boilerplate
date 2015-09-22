@@ -1,56 +1,27 @@
 {
-    "name": "Grunt_App_Boilerplate",
-    "version": "0.0.1",
-    "description": "",
-    "main": "dist/",
-    "repository": {
-        "type": "git",
-        "url": ""
-    },
-    "keywords": [
-        "mobile",
-        "framework",
-        "ios 7",
-        "ios7",
-        "ios8",
-        "ios 8",
-        "iphone",
-        "ipad",
-        "apple",
-        "phonegap",
-        "native",
-        "touch",
-        "appstore",
-        "app",
-        "f7"
-    ],
-    "author": "Adriano Moura",
-    "license": [
-        ""
-    ],
-    "homepage": "",
-    "engines": {
-        "node": ">= 0.10.0"
-    },
-    "devDependencies": {
-        "grunt": "~0.4.5",
-        "load-grunt-tasks": "~0.6.0",
-        "jshint": "~2.5.6",
-        "grunt-contrib-concat": "~0.5.0",
-        "grunt-contrib-jshint": "~0.10.0",
-        "grunt-contrib-uglify": "~0.6.0",
-        "grunt-contrib-less": "^0.11.4",
-        "grunt-contrib-jade": "~0.13.0",
-        "grunt-contrib-watch": "~0.6.1",
-        "grunt-image-embed": "~0.3.1",
-        "grunt-contrib-copy": "~0.6.0",
-        "grunt-contrib-connect": "~0.8.0",
-        "grunt-open": "~0.2.3",
-        "jshint-stylish": "~1.0.0",
-        "time-grunt": "~1.0.0",
-        "grunt-contrib-clean": "~0.6.0"
-    },
-    "scripts": {
-        "run": "grunt"
-    }
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-clean": "~0.6.0",
+    "grunt-contrib-concat": "~0.5.0",
+    "grunt-contrib-connect": "~0.8.0",
+    "grunt-contrib-copy": "~0.6.0",
+    "grunt-contrib-jade": "~0.13.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-less": "^0.11.4",
+    "grunt-contrib-uglify": "~0.6.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-image-embed": "~0.3.1",
+    "grunt-open": "~0.2.3",
+    "grunt-phonegap": "^0.15.2",
+    "jshint": "~2.5.6",
+    "jshint-stylish": "~1.0.0",
+    "load-grunt-tasks": "~0.6.0",
+    "time-grunt": "~1.0.0"
+  },
+  "scripts": {
+    "run": "grunt"
+  }
 }

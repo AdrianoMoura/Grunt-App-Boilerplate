@@ -1,7 +1,5 @@
 /node_modules
 /.idea
-/build
-/dist
+/www
 /.DS_store
-/phonegap/Grunt_App_Boilerplate
-/xdk/Grunt_App_Boilerplate
+/phonegap

@@ -1,0 +1,19 @@
+{
+  "id": "br.com.example",
+  "name": "Mobile App Creator",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Adriano Moura",
+  "author_email": "adriano@tagweb.com",
+  "author_homepage": "",
+  "license": [
+    ""
+  ],
+  "phonegap_plugins": [
+
+  ],
+  "fullscreen": "false",
+  "androidMinSdkVersion": "10",
+  "homepage": "",
+  "platforms": ["android"]
+}
