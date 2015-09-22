@@ -1,32 +1,37 @@
 # Grunt App Boilerplate
 
-Repo created to serve like a base structure for phonegap mobile apps projects, using Intel XDK, phonegap and Grunt as a task manager.
+Repo created to serve like a base structure for phonegap mobile apps projects, using phonegap and Grunt as a task manager.
 
 
 ## Using
 
-First things first, edit package.json with your project info, most important is the name
+First things first, edit myapp.json with your project info: id, name, version, description, plugins and platforms
 
 
-If you haven't cordova/phonegap and grunt-cli in your computer, you must run:
+If you haven't phonegap and grunt-cli in your computer, you must run:
 
 ```
 sudo npm install -g grunt-cli
-sudo npm install -g cordova
+sudo npm install -g phonegap
 ```
 
-
-Now create a cordova/phonegap project in phonegap folder, the app_name must be the name in package.json
-
-```
-cordova create app_name [com.author.appname]
-```
-
-If you will use Intel XDK Create a Intel XDK project inside xdk folder, the App Name must be the same in package.json
-
-
-After all of this, run the following command
+After all of this, run the following command to install dependencies
 
 ```
 npm install
+```
+
+
+This new version of my boilerplate auto create the phonegap application, after install all dependences run the follow commands
+
+```
+grunt build // Build your application from src into www
+
+grunt phonegap // Build your application from src into www, create a phonegap project and build it
+
+grunt phonegap-run // Build your aplication from src into www, create a phonegap project, build it and run in default device
+
+grunt phonegap --platform android // Like grunt phonegap with selected platform target, without this parameter phonegap will build with the first platform defined in myapp.json
+
+grunt phonegap-run --platform android // Just like the commands before
 ```
