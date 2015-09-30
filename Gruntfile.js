@@ -386,7 +386,7 @@ module.exports = function (grunt) {
     // Build a new version of the library
     this.registerTask('phonegap-run', 'Builds a development version of <%= app.name %>', [
         'build',
-        'phonegap:build:' + platform,
+	'copy:phonegap',
         'phonegap:run:' + platform
     ]);
 
