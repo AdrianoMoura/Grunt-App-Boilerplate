@@ -1,3 +1,5 @@
+See the portuguese version of this readme here: [README_PT.md](README_PT.md)
+
 # Grunt App Boilerplate
 
 Repo created to serve like a base structure for phonegap mobile apps projects, using phonegap and Grunt as a task manager.
