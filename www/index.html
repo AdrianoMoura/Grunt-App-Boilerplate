@@ -11,11 +11,22 @@
   </head>
   <body>
     <div class="statusbar-overlay"></div>
+    <div class="panel-overlay"></div>
+    <div class="panel panel-left panel-reveal layout-dark">
+      <div class="list-block">
+        <ul>
+          <li><a href="index.html" class="item-content item-link close-panel">
+              <div class="item-inner">
+                <div class="item-title">Menu Link</div>
+              </div></a></li>
+        </ul>
+      </div>
+    </div>
     <div class="views">
       <div class="view view-main">
         <div class="navbar">
           <div class="navbar-inner">
-            <div class="left"></div>
+            <div class="left"><a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a></div>
             <div class="center sliding">Grunt App Boilerplate
             </div>
             <div class="right"></div>
@@ -36,7 +47,6 @@
     <!-- Path to your app js-->
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/framework7.min.js"></script>
-    <script type="text/javascript" src="js/Grunt_App_Boilerplate.js"></script>
     <script>
          // Determine theme depending on device
          var isIos = Framework7.prototype.device.ios;
@@ -86,4 +96,5 @@
          });
     </script>
   </body>
+  <script type="text/javascript" src="js/Grunt_App_Boilerplate.js"></script>
 </html>

@@ -169,20 +169,14 @@ module.exports = function (grunt) {
                     },
                     {
                         expand: true,
-                        cwd: 'src/lib/',
-                        src: ['*.css'],
+                        cwd: 'src/lib/css/',
+                        src: ['**'],
                         dest: 'www/css/'
                     },
                     {
                         expand: true,
-                        cwd: 'src/lib/',
-                        src: ['*.js'],
-                        dest: 'www/js/'
-                    },
-                    {
-                        expand: true,
-                        cwd: 'src/lib/',
-                        src: ['*.map'],
+                        cwd: 'src/lib/js/',
+                        src: ['**'],
                         dest: 'www/js/'
                     }
                 ]
@@ -197,20 +191,14 @@ module.exports = function (grunt) {
                     },
                     {
                         expand: true,
-                        cwd: 'src/lib/',
-                        src: ['*.css'],
+                        cwd: 'src/lib/css/',
+                        src: ['**'],
                         dest: 'www/css/'
                     },
                     {
                         expand: true,
-                        cwd: 'src/lib/',
-                        src: ['*.js'],
-                        dest: 'www/js/'
-                    },
-                    {
-                        expand: true,
-                        cwd: 'src/lib/',
-                        src: ['*.map'],
+                        cwd: 'src/lib/js/',
+                        src: ['**'],
                         dest: 'www/js/'
                     }
                 ]
