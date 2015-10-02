@@ -15,5 +15,5 @@
   "fullscreen": "false",
   "androidMinSdkVersion": "10",
   "homepage": "",
-  "platforms": ["android"]
+  "platforms": ["android", "ios"]
 }
