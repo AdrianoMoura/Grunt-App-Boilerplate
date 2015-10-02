@@ -48,10 +48,6 @@ module.exports = function (grunt) {
             },
             dist: {
                 src: 'www/'
-            },
-            phonegap_www:
-            {
-                src: 'phonegap/www/'
             }
         },
         less: {
@@ -376,7 +372,6 @@ module.exports = function (grunt) {
     // Build a new version of the library
     this.registerTask('phonegap-run', 'Builds a development version of <%= app.name %>', [
         'build',
-        'clean:phonegap',
 	    'copy:phonegap',
         'phonegap:run:' + platform
     ]);
