@@ -40,7 +40,7 @@ var myApp = new Framework7({
     // Enable Template7 pages
     template7Pages: true,
     animateNavBackIcon: true,
-    example: true,
+    example: true
 });
 
 // Init View

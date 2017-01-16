@@ -6,8 +6,8 @@ Framework7.prototype.plugins.example = function (app, params) {
   var _this = {
       debug: false,
 
-      test: function (user) {
-          console.log('Hello ' + user ? user.name : 'World')
+      hello: function (user) {
+        console.log("Hello " + user ? user.name : 'World')
       }
   };
 
