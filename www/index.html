@@ -36,7 +36,7 @@
           <div data-page="index" class="page">
             <div class="page-content">
               <div class="content-block">
-                <p>Content</p><a href="about.html">About app</a>
+                <p>Content</p><a onclick="myApp.alert(myApp.example.hello(&quot;Adriano&quot;))">Hello</a><br><br><a href="about.html">About app</a>
               </div>
             </div>
           </div>
@@ -47,54 +47,6 @@
     <!-- Path to your app js-->
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/framework7.min.js"></script>
-    <script>
-         // Determine theme depending on device
-         var isIos = Framework7.prototype.device.ios;
-         var isAndroid = !isIos;
-             // Set Template7 global devices flags
-         Template7.global = {
-             android: isAndroid,
-             ios: isIos
-         };
-         // Define Dom7
-         var $$ = Dom7;
-             // Add CSS Styles
-         if (isAndroid) {
-             $$('head').prepend(
-                 '<link rel="stylesheet" href="css/framework7.material.css">' +
-                 '<link rel="stylesheet" href="css/framework7.material.colors.css">'
-             );
-         }
-         else
-         {
-             $$('head').prepend(
-                 '<link rel="stylesheet" href="css/framework7.ios.css">' +
-                 '<link rel="stylesheet" href="css/framework7.ios.colors.css">'
-             );
-         }
-         // Change Through navbar layout to Fixed
-         if(isAndroid)
-         {
-             $$('.view .navbar-through').removeClass('navbar-through').addClass('navbar-fixed');
-             // And move Navbar into Page
-             $$('.view .page').each(function()
-             {
-                 $$(this).prepend($$(this).parent().parent().find('.navbar'));
-             })
-         }
-         // Init App
-         var myApp = new Framework7({
-             // Enable Material theme for Android device only
-             material: isAndroid,
-             // Enable Template7 pages
-             template7Pages: true,
-             animateNavBackIcon: true
-         });
-         // Init View
-         var mainView = myApp.addView('.view-main', {
-             dynamicNavbar: !isAndroid
-         });
-    </script>
+    <script type="text/javascript" src="js/Grunt_App_Boilerplate.js"></script>
   </body>
-  <script type="text/javascript" src="js/Grunt_App_Boilerplate.js"></script>
 </html>
