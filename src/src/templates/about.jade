@@ -1,0 +1,24 @@
+// Dynamic navbar for iOS theme
+| {{#if @global.ios}}
+.navbar
+    .navbar-inner
+        .left.sliding
+            a(href="#").back.link
+                i.icon.icon-back
+                span Back
+        .center.sliding About
+| {{/if}}
+.page(data-page="about")
+    // Fixed navbar for Material theme
+    | {{#if @global.android}}
+    .navbar
+        .navbar-inner
+            .left
+                a(href="#").back.icon-only
+                    i.icon.icon-back
+            .center About
+    | {{/if}}
+    .page-content
+        // Page content goes here
+        .content-block
+            p Page Content

@@ -1,5 +1,5 @@
 /node_modules
 /.idea
 /www
-/.DS_store
+.DS_store
 /phonegap

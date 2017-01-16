@@ -78,14 +78,14 @@ module.exports = function (grunt) {
                     compress: false,
                     banner: "<%= banner %>"
                 },
-                src: 'src/myapp/*.js',
+                src: ['src/myapp/model/*.js', 'src/myapp/plugins/*.js', 'src/myapp/*.js', 'src/myapp/view/*.js'],
                 dest: 'www/js/<%= app.name.replace(/ /g,"_") %>.js'
             },
             dist: {
                 options: {
                     banner: "<%= banner %>"
                 },
-                src: 'src/myapp/*.js',
+                src: ['src/myapp/model/*.js', 'src/myapp/plugins/*.js', 'src/myapp/*.js', 'src/myapp/view/*.js'],
                 dest: 'www/js/<%= app.name.replace(/ /g,"_") %>.js'
             }
         },
@@ -93,6 +93,13 @@ module.exports = function (grunt) {
             build: {
                 files: ['src/**'],
                 tasks: ['build'],
+                options: {
+                    livereload: true
+                }
+            },
+            dist: {
+                files: ['src/**'],
+                tasks: ['dist'],
                 options: {
                     livereload: true
                 }
@@ -146,7 +153,13 @@ module.exports = function (grunt) {
                 options: {
                     pretty: false,
                     data: function (dest, src) {
-                        return require('./myapp.json');
+
+                        var appData = grunt.file.readJSON('myapp.json');
+
+                        appData.title = appData.name;
+                        appData.name = appData.name.replace(/ /g,'_');
+
+                        return(appData);
                     }
                 },
                 files: [{
@@ -159,6 +172,22 @@ module.exports = function (grunt) {
             }
         },
         copy: {
+            prepare: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'lib/framework7/dist/css/',
+                        src: ['framework7**'],
+                        dest: 'src/lib/css/'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'lib/framework7/dist/js/',
+                        src: ['framework7**'],
+                        dest: 'src/lib/js/'
+                    }
+                ]
+            },
             build: {
                 files: [
                     {
@@ -348,38 +377,63 @@ module.exports = function (grunt) {
 
     //platform
     var platform = grunt.option('platform') || 'android';
+    var dist = grunt.option('dist') || false;
 
     // Default task.
     this.registerTask('default', ['default']);
 
-    // Build a new version of the library
-    this.registerTask('default', 'Builds a development version of <%= app.name %>', [
-        'build',
-        'server'
-    ]);
+    if (!dist){
+      // Build a new version of the library
+      this.registerTask('default', 'Builds a development version of <%= app.name %>', [
+          'build',
+          'server'
+      ]);
+    }
+    else {
+      this.registerTask('default', 'Builds a development version of <%= app.name %>', [
+          'dist',
+          'server'
+      ]);
+    }
 
     this.registerTask('dist', 'Builds a development version of <%= app.name %>', [
         'build-dist',
         'server'
     ]);
 
-    // Build a new version of the library
-    this.registerTask('phonegap', 'Builds a development version of <%= app.name %>', [
-        'build',
-        'phonegap:build:' + platform
-    ]);
+    if (!dist){
+      // Build a new version of the library
+      this.registerTask('phonegap', 'Builds a development version of <%= app.name %>', [
+          'build',
+          'phonegap:build:' + platform
+      ]);
 
-    // Build a new version of the library
-    this.registerTask('phonegap-run', 'Builds a development version of <%= app.name %>', [
-        'build',
-	    'copy:phonegap',
-        'phonegap:run:' + platform
-    ]);
+      // Build a new version of the library
+      this.registerTask('phonegap-run', 'Builds a development version of <%= app.name %>', [
+          'build',
+  	      'copy:phonegap',
+          'phonegap:run:' + platform
+      ]);
+    } else {
 
+        // Build a new version of the library
+        this.registerTask('phonegap', 'Builds a development version of <%= app.name %>', [
+            'build-dist',
+            'phonegap:build:' + platform
+        ]);
+
+        // Build a new version of the library
+        this.registerTask('phonegap-run', 'Builds a development version of <%= app.name %>', [
+            'build-dist',
+    	      'copy:phonegap',
+            'phonegap:run:' + platform
+        ]);
+    }
 
     // TASK CONFIG
     // Build a new version of the library
     this.registerTask('build', 'Builds a development version of <%= app.name %>', [
+        'copy:prepare',
         'clean:build',
         'copy:build',
         'uglify:build',

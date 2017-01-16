@@ -27,7 +27,7 @@ Renaming it you still can pull any update in my Boilerplate
 
 ## Using
 
-First things first, edit myapp.json with your project info: id, name, version, description, plugins and platforms
+First things first, edit myapp.json with your project info: id, name, version, description, plugins
 
 
 If you haven't phonegap and grunt-cli in your computer, you must run:
@@ -43,12 +43,17 @@ After this, run the following command to install dependencies
 npm install
 ```
 
+You will need to clone the latest Framework7 release, run the following command, this will clone the Framework7 repository to /lib folder. The grunt will copy the necessary files from /lib/Framework7 to the src folder, this is a important step
+```
+git submodule update --init
+```
+
 
 This new version of my boilerplate auto create the phonegap application, after install all dependences run the follow commands
 
 ```
-// Build your application from src into www
-grunt build
+// Copy the necessary files from /lib/framework7 and build your application from src into www
+grunt
 
 // Build your application from src into www, create a phonegap project and build it
 grunt phonegap
@@ -63,12 +68,14 @@ grunt phonegap --platform android
 grunt phonegap-run --platform android
 ```
 
+Adding the --dist parameter after any command will prepare all files from distribution version (create minified and uglyfied versions of css, js and html)
+
 
 ## Troubleshooting
 
-### Fatal error: Command failed: /bin/sh -c phonegap local build android 
+### Fatal error: Command failed: /bin/sh -c phonegap local build android
 
 Android SDK isn't installed
 ANDROID_HOME and/or PATH is not defined
-or 
-androidMinSdkVersion in myapp.json must be your lowest Android SDK, maybe you need to change this value, run android on terminal and check it 
+or
+androidMinSdkVersion in myapp.json must be your lowest Android SDK, maybe you need to change this value, run android on terminal and check it
