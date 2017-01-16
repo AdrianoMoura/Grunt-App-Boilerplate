@@ -7,7 +7,7 @@ Framework7.prototype.plugins.example = function (app, params) {
       debug: false,
 
       hello: function (user) {
-        console.log("Hello " + user ? user.name : 'World')
+        return "Hello " + user != '' ? user : 'World'
       }
   };
 
